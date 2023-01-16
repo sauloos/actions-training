@@ -1,0 +1,28 @@
+name: GitHub Actions Demo
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - '.github'
+  pull_request:
+    branches:
+      - 'main'
+  schedule:
+    - cron: '* 15 6 ? * SUN *'
+  workflow_dispatch:
+
+jobs:
+  job_1:
+    name: job_1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the event that triggered this
+        run: echo ${{ inputs.event }} 
+      - name: Print the name of the branch
+        run: echo ${{ inputs.event }} 
+      - name: List all files in the repository
+        run: echo ${{ inputs.event }} 
+  
+  
